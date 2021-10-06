@@ -1,0 +1,17 @@
+@page "/movies/{IdMovie:int}"
+@page "/movies/{IdMovie:int}/{Name}"
+
+<h6>Mostrar película @IdMovie</h6>
+
+<CardComponent></CardComponent>
+
+@code{
+    @* Se muestra el Id y el nombre de la película en la ruta *@
+    [Parameter] public int IdMovie { get; set; }
+    [Parameter] public string Name { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Console.WriteLine($"El id de la película es {IdMovie}");
+    }
+}
